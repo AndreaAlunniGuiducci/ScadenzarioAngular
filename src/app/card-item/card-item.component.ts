@@ -1,6 +1,5 @@
 import { Component, OnInit, SimpleChange } from '@angular/core';
 import { ScadenzarioService } from '../scadenzario.service';
-import { Item } from '../item';
 
 @Component({
   selector: 'app-card-item',
@@ -12,11 +11,9 @@ export class CardItemComponent implements OnInit {
   items = this.scadenzarioService.getItems();
   items1 = this.items.sort(
     (a, b) => +new Date(a.expired) - +new Date(b.expired)
-  );  
-  
+  );
+
   constructor(private scadenzarioService: ScadenzarioService) {}
-  delete(){
-    
-  }
+  delete() {}
   ngOnInit(): void {}
 }
