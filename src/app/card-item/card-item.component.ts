@@ -7,9 +7,9 @@ import { ScadenzarioService } from '../scadenzario.service';
   styleUrls: ['./card-item.component.sass'],
 })
 export class CardItemComponent implements OnInit {
-  today = new Date();
+  today = new Date();;
   items = this.scadenzarioService.getItems();
-  items1 = this.items.sort(
+  itemsSorted = this.items.sort(
     (a, b) => +new Date(a.expired) - +new Date(b.expired)
   );
 
