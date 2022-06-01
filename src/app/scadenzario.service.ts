@@ -19,6 +19,11 @@ export class ScadenzarioService {
     console.log(this.items);
   }
 
+  removeItem(i: number){
+    this.items.splice(i)
+    localStorage.setItem('item', JSON.stringify(this.items));
+  }
+
   getItems() {
     return this.items;
   }

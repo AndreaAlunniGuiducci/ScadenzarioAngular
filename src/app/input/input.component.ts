@@ -11,23 +11,22 @@ export class InputComponent implements OnInit {
   today = new Date();
   item = '';
   expired = new Date();
-  diffDays = 0;
   expiredDay = 0;
 
   constructor(private scadenzarioService: ScadenzarioService) {}
   addItem() {
-    this.diffDays = Math.ceil(
-      Math.abs(this.expiredDay= new Date(this.expired).getTime() - this.today.getTime()) /
-        (1000 * 60 * 60 * 24)
-    );
-
+    
     const newItem: Item = {
       item: this.item,
       expired: this.expired,
-      diffDays: this.diffDays,
     };
     this.scadenzarioService.addItem(newItem);
-    console.log(this.diffDays);
   }
   ngOnInit(): void {}
 }
+
+// this.diffDays = Math.ceil(
+// (this.expiredDay =
+//   new Date(this.expired).getTime() - this.today.getTime()) /
+//   (1000 * 60 * 60 * 24)
+// );

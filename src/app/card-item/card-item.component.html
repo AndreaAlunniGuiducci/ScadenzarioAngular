@@ -1,13 +1,16 @@
 <div class="wrapper">
   <div
-    *ngFor="let item of itemsSorted"
-    index
-    as
-    i
+    *ngFor="let item of itemsSorted
+    let
+    i=index"
     class="cardItem"
-    [ngClass]="[item.diffDays < 7 ? 'nearExpired' : 'farExpired']"
-    >
-    <p>mancano {{item.diffDays}} giorni alla scadenza</p>
+    [attr.data-index]="i"
+    [ngClass]="[getDiffDays(item.expired) < 7 ? 'nearExpired' : 'farExpired']"
+  >
+    <button (click)="deleteItem(i)" class="deleteButton">X</button>
+    <p>
+      {{ getDiffDays(item.expired) }}
+    </p>
     <p>{{ item.item }}</p>
     <p>{{ item.expired }}</p>
   </div>
