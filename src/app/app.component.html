@@ -1,6 +1,10 @@
 <div class="header">
   <h1>SCADENZARIO</h1>
-  <p>{{ today }}</p>
+  <div class="link">
+    <a routerLink="home">HOME</a>
+    <a routerLink="login">LOG-IN</a>
+    <a routerLink="signup">SIGN-UP</a>
+    <p>{{ today }}</p>
+  </div>
 </div>
-<app-input></app-input>
-<app-card-item></app-card-item>
+<router-outlet></router-outlet>

@@ -1,5 +1,5 @@
 import { Component, OnInit, SimpleChange } from '@angular/core';
-import { ScadenzarioService } from '../scadenzario.service';
+import { ScadenzarioService } from '../../scadenzario.service';
 
 @Component({
   selector: 'app-card-item',

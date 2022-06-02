@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ScadenzarioService } from '../scadenzario.service';
-import { Item } from '../item';
+import { ScadenzarioService } from '../../scadenzario.service';
+import { Item } from '../../item';
 
 @Component({
   selector: 'app-input',
