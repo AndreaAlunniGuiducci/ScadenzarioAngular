@@ -16,13 +16,19 @@ export class CardItemComponent implements OnInit {
   constructor(private scadenzarioService: ScadenzarioService) {
     console.log(this.itemsSorted);
   }
+  deleteExpired(expired: any, i: number) {
+    if (this.getDiffDays(expired) < 1) {
+      this.deleteItem(i);
+    }
+    console.log(this.getDiffDays);
+  }
   getDiffDays(expired: any) {
     return Math.floor(
       (new Date(expired).getTime() - new Date().getTime()) /
         (1000 * 60 * 60 * 24)
     );
   }
-  deleteItem(i: number){
+  deleteItem(i: number) {
     this.scadenzarioService.removeItem(i);
   }
   ngOnInit(): void {}

@@ -20,7 +20,7 @@ export class ScadenzarioService {
   }
 
   removeItem(i: number){
-    this.items.splice(i)
+    this.items.splice(i, 1)
     localStorage.setItem('item', JSON.stringify(this.items));
   }
 
