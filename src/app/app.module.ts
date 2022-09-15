@@ -22,27 +22,27 @@ const appRoutes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
 ];
-@NgModule({
-  declarations: [
-    AppComponent,
-    InputComponent,
-    CardItemComponent,
-    LoginComponent,
-    HomeComponent,
-    SignupComponent,
-  ],
-  imports: [
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
-    AngularFirestoreModule,
-    AngularFireStorageModule,
-    AngularFireDatabaseModule,
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    RouterModule.forRoot(appRoutes),
-  ],
-  providers: [AuthService],
-  bootstrap: [AppComponent],
-})
+// @NgModule({
+//   declarations: [
+//     AppComponent,
+//     InputComponent,
+//     CardItemComponent,
+//     LoginComponent,
+//     HomeComponent,
+//     SignupComponent,
+//   ],
+//   imports: [
+//     AngularFireModule.initializeApp(environment.firebase),
+//     AngularFireAuthModule,
+//     AngularFirestoreModule,
+//     AngularFireStorageModule,
+//     AngularFireDatabaseModule,
+//     BrowserModule,
+//     AppRoutingModule,
+//     FormsModule,
+//     RouterModule.forRoot(appRoutes),
+//   ],
+//   providers: [AuthService],
+//   bootstrap: [AppComponent],
+// })
 export class AppModule {}
