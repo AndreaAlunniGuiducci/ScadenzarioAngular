@@ -1,5 +1,5 @@
 # Nome della action
-name: Deploy angular app to GH pages
+name: Deploy React App to GH pages
 
 # "evento" che triggera la action
 on:
