@@ -25,7 +25,7 @@ export class CardItemComponent implements OnInit {
   getDiffDays(expired: any) {
     return Math.floor(
       (new Date(expired).getTime() - new Date().getTime()) /
-        (1000 * 60 * 60 * 24)
+        (1000 * 60 * 60 * 24)+1
     );
   }
   deleteItem(i: number) {
