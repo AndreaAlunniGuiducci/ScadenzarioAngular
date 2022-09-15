@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './shared/service/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass'],
 })
 export class AppComponent {
+  constructor(public authService: AuthService) {
+    console.log(this.user);
+  }
+
+  user = JSON.stringify(this.authService.userData);
+
   title = 'ScadenzarioAngular';
 
   date = new Date();

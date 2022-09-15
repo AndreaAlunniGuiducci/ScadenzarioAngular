@@ -1,5 +1,5 @@
 import { Component, OnInit, SimpleChange } from '@angular/core';
-import { ScadenzarioService } from '../../scadenzario.service';
+import { ScadenzarioService } from '../../shared/service/scadenzario.service';
 
 @Component({
   selector: 'app-card-item',
@@ -25,7 +25,7 @@ export class CardItemComponent implements OnInit {
   getDiffDays(expired: any) {
     return Math.floor(
       (new Date(expired).getTime() - new Date().getTime()) /
-        (1000 * 60 * 60 * 24)
+        (1000 * 60 * 60 * 24)+1
     );
   }
   deleteItem(i: number) {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ScadenzarioService } from '../../scadenzario.service';
+import { ScadenzarioService } from '../../shared/service/scadenzario.service';
 import { Item } from '../../item';
 
 @Component({
