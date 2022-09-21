@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ScadenzarioService } from '../../scadenzario.service';
+import { ScadenzarioService } from '../../shared/service/scadenzario.service';
 import { Item } from '../../item';
+
 
 @Component({
   selector: 'app-input',
@@ -21,6 +22,8 @@ export class InputComponent implements OnInit {
       expired: this.expired,
     };
     this.scadenzarioService.addItem(newItem);
+    this.item = '';
+    this.expired = new Date();
   }
   ngOnInit(): void {}
 }

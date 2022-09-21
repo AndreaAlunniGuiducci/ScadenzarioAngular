@@ -5,26 +5,25 @@ import { Item } from './item';
 })
 export class ScadenzarioService {
   items: Item[] = [];
+  itemObj = {itemObj: this.items}
 
   constructor() {
     JSON.parse(localStorage.getItem('item')!) === null
-      ? localStorage.setItem('item', JSON.stringify([]))
-      : (this.items = JSON.parse(localStorage.getItem('item')!));
-    console.log(this.items);
+      ? localStorage.setItem('item', JSON.stringify(this.itemObj))
+      : (this.itemObj = JSON.parse(localStorage.getItem('item')!));
   }
 
   addItem(item: Item) {
-    this.items.push(item);
-    localStorage.setItem('item', JSON.stringify(this.items));
-    console.log(this.items);
+    this.itemObj.itemObj.push(item);
+    localStorage.setItem('item', JSON.stringify(this.itemObj));
   }
 
   removeItem(i: number){
-    this.items.splice(i, 1)
-    localStorage.setItem('item', JSON.stringify(this.items));
+    this.itemObj.itemObj.splice(i, 1)
+    localStorage.setItem('item', JSON.stringify(this.itemObj));
   }
 
   getItems() {
-    return this.items;
+    return this.itemObj.itemObj;
   }
 }

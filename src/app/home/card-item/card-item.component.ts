@@ -1,5 +1,5 @@
 import { Component, OnInit, SimpleChange } from '@angular/core';
-import { ScadenzarioService } from '../../scadenzario.service';
+import { ScadenzarioService } from '../../shared/service/scadenzario.service';
 
 @Component({
   selector: 'app-card-item',
@@ -14,13 +14,11 @@ export class CardItemComponent implements OnInit {
   );
 
   constructor(private scadenzarioService: ScadenzarioService) {
-    console.log(this.itemsSorted);
   }
   deleteExpired(expired: any, i: number) {
-    if (this.getDiffDays(expired) < 1) {
+    if (this.getDiffDays(expired) < 0) {
       this.deleteItem(i);
     }
-    console.log(this.getDiffDays);
   }
   getDiffDays(expired: any) {
     return Math.floor(
