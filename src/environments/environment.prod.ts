@@ -1,12 +1,12 @@
 export const environment = {
   firebase: {
-    apiKey:  process.env["FIREBASE_API_KEY"],
-    authDomain: process.env["FIREBASE_AUTH_DOMAIN"],
-    databaseURL: process.env["FIREBASE_DATABASE_URL"],
-    projectId: process.env["FIREBASE_PROJECT_ID"],
-    storageBucket: process.env["FIREBASE_STORAGE_BUCKET"],
-    messagingSenderId: process.env["FIREBASE_MESSAGING_SENDER_ID"],
-    appId: process.env["FIREBASE_APP_ID"],
+    apiKey: "AIzaSyCFwnI5Z_O53jBkBMJrXFRDlX0A_dfais0",
+    authDomain: "scadenzario-14b0c.firebaseapp.com",
+    databaseURL: "https://scadenzario-14b0c-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "scadenzario-14b0c",
+    storageBucket: "scadenzario-14b0c.appspot.com",
+    messagingSenderId: "930036765064",
+    appId: "1:930036765064:web:b89e8b90973918e57f2a3d"
   }, 
   production: true
 };
