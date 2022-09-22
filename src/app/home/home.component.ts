@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {}
 
   setData = async (items: Array<any>) => {
-    this.db.collection('users').doc(this.user.uid).update({items: items});
+    this.db.collection('users').doc('Admin').update({items: items});
   };
   getData = async () => {
     this.db
