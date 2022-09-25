@@ -20,8 +20,11 @@ export class ScadenzarioService {
   }
 
   removeItem(i: number){
+    let itemToRemove = this.itemObj.items[i].item;
+    if(confirm(`vuoi cancellare ${itemToRemove}?`)){
     this.itemObj.items.splice(i, 1)
     localStorage.setItem('item', JSON.stringify(this.itemObj));
+    }
   }
 
   getItems() {
