@@ -5,7 +5,7 @@ import { Item } from './item';
 })
 export class ScadenzarioService {
   items: Item[] = [];
-  itemObj = {itemObj: this.items}
+  itemObj = {items: this.items}
 
   constructor() {
     JSON.parse(localStorage.getItem('item')!) === null
@@ -14,16 +14,17 @@ export class ScadenzarioService {
   }
 
   addItem(item: Item) {
-    this.itemObj.itemObj.push(item);
+    this.itemObj.items.unshift(item);
     localStorage.setItem('item', JSON.stringify(this.itemObj));
+    window.alert(`${JSON.stringify(item.item)} aggiunto`);
   }
 
   removeItem(i: number){
-    this.itemObj.itemObj.splice(i, 1)
+    this.itemObj.items.splice(i, 1)
     localStorage.setItem('item', JSON.stringify(this.itemObj));
   }
 
   getItems() {
-    return this.itemObj.itemObj;
+    return this.itemObj.items;
   }
 }

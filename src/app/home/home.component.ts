@@ -12,14 +12,14 @@ export class HomeComponent implements OnInit {
 
   constructor(private db: AngularFirestore) {
     let items = JSON.parse(localStorage.getItem('item') || '{}');
-    this.setData(items);
+    // this.setData(items);
     // this.getData();
   }
 
   ngOnInit(): void {}
 
   setData = async (items: Array<any>) => {
-    this.db.collection('users').doc('Admin').update({items: items});
+    this.db.collection('users').doc('Admin1').set({items: items});
   };
   getData = async () => {
     this.db

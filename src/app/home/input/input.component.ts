@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ScadenzarioService } from '../../shared/service/scadenzario.service';
+import { ScadenzarioService } from '../../scadenzario.service';
 import { Item } from '../../item';
 
 
@@ -16,7 +16,6 @@ export class InputComponent implements OnInit {
 
   constructor(private scadenzarioService: ScadenzarioService) {}
   addItem() {
-    
     const newItem: Item = {
       item: this.item,
       expired: this.expired,

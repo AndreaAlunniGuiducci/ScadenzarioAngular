@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ScadenzarioService } from './shared/service/scadenzario.service';
+import { ScadenzarioService } from './scadenzario.service';
 
 describe('ScadenzarioService', () => {
   let service: ScadenzarioService;
