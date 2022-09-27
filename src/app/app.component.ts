@@ -7,12 +7,9 @@ import { AuthService } from './shared/service/auth.service';
   styleUrls: ['./app.component.sass'],
 })
 export class AppComponent {
-  constructor(public authService: AuthService) {
-    console.log(this.user);
-  }
+  constructor(public authService: AuthService) {}
 
   user = JSON.stringify(this.authService.userData);
-
   title = 'ScadenzarioAngular';
 
   date = new Date();
@@ -21,4 +18,17 @@ export class AppComponent {
   year = this.date.getFullYear();
 
   today = `${this.day}/${this.month + 1}/${this.year}`;
+
+  isLogged() {
+    let link = this.authService.isLoggedIn ? 'home' : 'login';
+    return link;
+  }
+  getUser() {
+    if (this.authService.isLoggedIn) {
+      let currentUser = JSON.parse(localStorage.getItem('user')!);
+      return currentUser.email;
+    } else {
+      return 'OSPITE';
+    }
+  }
 }

@@ -3,12 +3,17 @@
     *ngFor="let item of itemsSorted; let i = index"
     class="cardItem"
     [ngClass]="getDiffDays(item.expired) < 7 ? 'nearExpired' : 'farExpired'"
+    (click)="modifyDate(i)"
   >
   {{deleteExpired(item.expired, i)}}
     <button (click)="deleteItem(i)" class="deleteButton">X</button>
     <p>SCADE TRA {{ getDiffDays(item.expired) }} GIORNI</p>
     <p>{{ item.item }}</p>
     <p>{{ item.expired }}</p>
+  </div>
+  <div class="newDateBox">
+    <h2>NUOVA DATA DI SCADENZA</h2>
+    <input [(ngModel)]="expired" type="date" name="expired" id="expired"/>
   </div>
 </div>
 

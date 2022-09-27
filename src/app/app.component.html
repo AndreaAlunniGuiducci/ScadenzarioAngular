@@ -1,11 +1,14 @@
 <div class="header">
-  <h1>SCADENZARIO</h1>
-  {{user}}
-  <div class="link">
-    <a routerLink="home">HOME</a>
-    <a routerLink="login">LOG-IN</a>
-    <a routerLink="signup">SIGN-UP</a>
-    <p>{{ today }}</p>
+  <p class="user">{{ getUser() }}</p>
+  <div class="headerWrapper">
+    <h1>SCADENZARIO</h1>
+    <div class="link">
+      <a [routerLink]="isLogged()">HOME</a>
+      <a routerLink="login">ACCEDI</a>
+      <a routerLink="signup">ISCRIVITI</a>
+      <a (click)="authService.SignOut()">LOG-OUT</a>
+      <p>{{ today }}</p>
+    </div>
   </div>
 </div>
 <router-outlet></router-outlet>

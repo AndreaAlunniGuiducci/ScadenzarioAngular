@@ -40,6 +40,7 @@ export class AuthService {
           this.router.navigate(['dashboard']);
         });
         this.SetUserData(result.user);
+        this.router.navigate(['/home'])
       })
       .catch((error) => {
         window.alert(error.message);
@@ -84,7 +85,7 @@ export class AuthService {
   SignOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.router.navigate(['sign-in']);
+      this.router.navigate(['login']);
     });
   }
 }
