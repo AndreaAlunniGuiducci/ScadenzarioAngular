@@ -1,7 +1,9 @@
 <div class="displayTable">
   <div class="displayTableCell">
     <div class="authBlock">
-      <h3>Sign In</h3>
+      <p>Possono accedere ai contenuti della HOME solo gli utenti che hanno effetuato l'accesso</p>
+      <span>se non sei un utente registrato effetua la registrazioni </span><span routerLink="/signup">qui</span>
+      <h3>Accedi</h3>
       <div class="formGroup">
         <input
           type="text"
@@ -25,14 +27,14 @@
         <input
           type="button"
           class="btn btnPrimary"
-          value="Log in"
+          value="Accedi"
           (click)="authService.SignIn(userName.value, userPassword.value)"
         />
       </div>
-      <div class="formGroup">
+      <!-- <div class="formGroup">
         <span class="or"><span class="orInner">Or</span></span>
       </div>
-      <!-- Calling GoogleAuth Api from AuthService -->
+      Calling GoogleAuth Api from AuthService
       <div class="forgotPassword">
         <span routerLink="/forgot-password">Forgot Password?</span>
       </div>
@@ -45,7 +47,7 @@
         >
           Sign Up</span
         ></span
-      >
+      > -->
     </div>
   </div>
 </div>
