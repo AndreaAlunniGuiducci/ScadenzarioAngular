@@ -15,7 +15,6 @@ export class InputComponent implements OnInit {
   expiredDay = 0;
 
   constructor(private scadenzarioService: ScadenzarioService) {
-    this.scadenzarioService.getData();
   }
   addItem() {
     const newItem: Item = {

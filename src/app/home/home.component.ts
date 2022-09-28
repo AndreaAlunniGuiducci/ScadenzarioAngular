@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { debugErrorMap } from 'firebase/auth';
+import { ScadenzarioService } from '../scadenzario.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,8 @@ import { debugErrorMap } from 'firebase/auth';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() {
+  constructor(public scadenzarioService: ScadenzarioService) {
+    this.scadenzarioService.getData();
   }
 
   ngOnInit(): void {}
